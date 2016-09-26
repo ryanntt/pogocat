@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<head>
+  <title>My PokeDex</title>
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script src="./node_modules/godex/godex.min.js" type="text/javascript"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./js/standalone/selectize.js"></script>
+  <script type ="text/javascript" src="./js/app.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./css/selectize.css" />
+  <style type="text/css">
+    .form {
+      margin: 1em;
+      padding: 1em;
+      border: #CCC 1px solid;
+      border-radius: 5px;
+      background-color: #F8F8F8;
+    }
+    .overall {
+      border: 1px #CCC solid;
+      padding: 1em;
+      margin: 1em 0;
+      background: #EFEFEF;
+      color: #999;
+    }
+    .result {
+      margin: 1em;
+      padding: 0 1em 1em 1em;
+      border: #222 2px solid;
+      border-radius: 5px;
+      background-color: #FFF;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form">
+        <div class="form-group">
+          <label for="pokemonName">Pokemon Name</label>
+          <select id="pokemonName" placeholder="Pick a pokemon..." onchange="changePokemon(event);"></select>
+        </div>
+        <div class="overall">
+          <h5>Max CP: <span class="cp-max-overall"></span></h4>
+          <h5>Type: <span class="type-overall"></span></h4>
+        </div>
+        <div class="form-group">
+          <label for="cp">CP</label>
+          <input type="number" class="form-control" id="cp" placeholder="CP" onchange="checkIV(event);"">  
+        </div>
+        <div class="form-group">
+          <label for="hp">HP</label>
+          <input type="number" class="form-control" id="hp" placeholder="HP" onchange="checkIV(event);">
+        </div>
+        <div class="form-group">
+          <label for="stardust">Stardust</label>
+          <!-- <input type="number" class="form-control" id="stardust" placeholder="Stardust"> -->
+          <select id="stardust" placeholder="e.g. 200, 400" onchange="checkIV(event);"></select>
+        </div>
+        <div class="form-group">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="powered-up" value="fourth_checkbox" onchange="checkIV(event);">
+            <strong>Powered-up?</strong>
+          </label>
+        </div>
+        <div class="form-group">
+          <label>Highest Stats</label><br/>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="attack" value="first_checkbox" onchange="checkIV(event);">
+            Attack
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="defense" value="second_checkbox" onchange="checkIV(event);">
+            Defense
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="stamina" value="third_checkbox" onchange="checkIV(event);">
+            HP
+          </label>
+        </div>
+      </div>                                                                  
+    </div>
+    <div class="col-md-6">
+      <div class="result">
+        <h3>Ratings</h3>
+        <h4><span class="cp-min"></span> - <span class="cp-max"></span>%</h4>
+      </div>             
+    </div>
+  </div>                                                                                                          
+</body>                                                                                                                                                     
