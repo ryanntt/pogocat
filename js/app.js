@@ -21,6 +21,7 @@ $(document).ready(function() {
     valueField: 'name',
     labelField: 'name',
     searchField: 'name',
+    selectOnTab: 'true',
     options: pokemons,
     create: false
   });
@@ -30,6 +31,7 @@ $(document).ready(function() {
     valueField: 'stardust',
     labelField: 'stardust',
     searchField: 'stardust',
+    selectOnTab: 'true',
     options: dustLevels,
     create: false
   });
