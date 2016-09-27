@@ -14,16 +14,21 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="./css/selectize.css" />
   <style type="text/css">
+    html,body
+    {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+      overflow-x: hidden;
+      background: #F8F8F8; 
+    }
     .form {
       margin: 1em;
-      padding: 1em;
-      border: #CCC 1px solid;
-      border-radius: 5px;
-      background-color: #F8F8F8;
     }
     .overall {
       border: 1px #CCC solid;
-      padding: 1em;
+      padding: 0 1em;
       margin: 1em 0;
       background: #EFEFEF;
       color: #999;
@@ -46,7 +51,7 @@
 </head>
 <body>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-sm-6">
       <div class="form">
         <div class="form-group">
           <label for="pokemonName">Pokemon Name</label>
@@ -56,24 +61,36 @@
           <h5>Max CP: <span class="cp-max-overall"></span></h4>
           <h5>Type: <span class="type-overall"></span></h4>
         </div>
-        <div class="form-group">
-          <label for="cp">CP</label>
-          <input type="number" class="form-control" id="cp" placeholder="CP" onchange="checkIV(event);"">  
+        <div class="row">
+          <div class="col-sm-6 col-xs-6">
+            <div class="form-group">
+              <label for="cp">CP</label>
+              <input type="number" class="form-control" id="cp" placeholder="CP" onchange="checkIV(event);"">  
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-6">
+            <div class="form-group">
+              <label for="hp">HP</label>
+              <input type="number" class="form-control" id="hp" placeholder="HP" onchange="checkIV(event);">
+            </div>    
+          </div>
         </div>
-        <div class="form-group">
-          <label for="hp">HP</label>
-          <input type="number" class="form-control" id="hp" placeholder="HP" onchange="checkIV(event);">
-        </div>
-        <div class="form-group">
-          <label for="stardust">Stardust</label>
-          <!-- <input type="number" class="form-control" id="stardust" placeholder="Stardust"> -->
-          <select id="stardust" placeholder="e.g. 200, 400" onchange="checkIV(event);"></select>
-        </div>
-        <div class="form-group">
-          <label class="checkbox-inline">
-            <input type="checkbox" id="powered-up" value="fourth_checkbox" onchange="checkIV(event);">
-            <strong>Powered-up?</strong>
-          </label>
+        <div class="row">
+          <div class="col-sm-6 col-xs-6">
+            <div class="form-group">
+              <label for="stardust">Stardust</label>
+              <!-- <input type="number" class="form-control" id="stardust" placeholder="Stardust"> -->
+              <select id="stardust" placeholder="e.g. 200, 400" onchange="checkIV(event);"></select>
+            </div>    
+          </div>
+          <div class="col-sm-6 col-xs-6">
+            <div class="form-group">
+              <strong>Powered-up</strong><br/>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="powered-up" value="fourth_checkbox" onchange="checkIV(event);">Yes
+              </label>
+            </div>
+          </div>
         </div>
         <div class="form-group">
           <label>Highest Stats</label><br/>
@@ -92,7 +109,7 @@
         </div>
       </div>                                                                  
     </div>
-    <div class="col-md-6">
+    <div class="col-sm-6">
       <div class="result">
         <h3>Ratings</h3>
         <h4 class="ratings hidden"></h4>
