@@ -48,8 +48,20 @@ function checkIV() {
       strongHP: $('#stamina').prop('checked')   // send that as true.
     });
     var grade = result["grade"];
-    $('.cp-min').text(grade["min"]);
-    $('.cp-max').text(grade["max"]);
+
+    if ( grade['avg'] != undefined) {
+      $('.message').addClass('hidden');
+      $('.ratings').removeClass('hidden');
+      if ( grade["min"] != grade["max"] ) {
+        $('.ratings').text(grade["min"] + " - " + grade["max"] + "%");
+      } else {
+        $('.ratings').text(grade["avg"] + "%");
+      }  
+    } else {
+      $('.message').removeClass('hidden');
+      $('.ratings').addClass('hidden');
+    }
+    
   }
 
 };
