@@ -25,16 +25,6 @@ $(document).ready(function() {
     options: pokemons,
     create: false
   });
-
-  $('#stardust').selectize({
-    maxItems: 1,
-    valueField: 'stardust',
-    labelField: 'stardust',
-    searchField: 'stardust',
-    selectOnTab: 'true',
-    options: dustLevels,
-    create: false
-  });
 });
 
 function checkIV() {
