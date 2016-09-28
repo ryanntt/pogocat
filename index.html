@@ -27,11 +27,13 @@
       margin: 1em;
     }
     .overall {
-      border: 1px #CCC solid;
-      padding: 0 1em;
-      margin: 1em 0;
-      background: #EFEFEF;
+      margin: -1em 0 1em 1em;
+    }
+    .overall h5{
       color: #999;
+    }
+    .overall h5.pokemonSelected, .overall h5 span {
+      color: #333;
     }
     .result {
       margin: 1em;
@@ -47,6 +49,9 @@
     .message {
       color: #999;
     }
+    .selectize-dropdown, .selectize-input, .selectize-input input {
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
@@ -58,6 +63,7 @@
           <select id="pokemonName" placeholder="Pick a pokemon..." onchange="changePokemon(event);"></select>
         </div>
         <div class="overall">
+          <h5 class="pokemonSelected"></h5>
           <h5>Max CP: <span class="cp-max-overall"></span></h4>
           <h5>Type: <span class="type-overall"></span></h4>
         </div>

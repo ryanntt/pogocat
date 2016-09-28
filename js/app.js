@@ -59,8 +59,10 @@ function checkIV() {
 };
 
 function changePokemon(event) {
-  if ( event.target.value != "" ) {
-    var pokemonDetails = dex.get(event.target.value);
+  var pokemonSelected = event.target.value;
+  if ( pokemonSelected != "" ) {
+    var pokemonDetails = dex.get(pokemonSelected);
+    $('.pokemonSelected').text(event.target.value);
     $('.cp-max-overall').text(pokemonDetails['maxCP']);
     $('.type-overall').text(function() {
       var types = "";
